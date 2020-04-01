@@ -19,6 +19,10 @@
 /.web-server-pid
 ###< symfony/web-server-bundle ###
 
+### Generated CSS files and maps
+/public/assets/css/style.css
+/public/assets/css/*.map
+
 ### PHPStorm
 /.idea/
 
