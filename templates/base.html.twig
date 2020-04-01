@@ -11,16 +11,80 @@
         {% endblock %}
     </head>
     <body>
-    <header>
-        <h1></h1>
-        <nav>
-            <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/parking/map">Parkings</a></li>
-                <li><a href="/velo/map">V&eacute;lhops</a></li>
+    <header class="navbar" role="banner">
+        <h1 class="navbar-title">JENT</h1>
+        <nav class="navbar-nav" role="navigation">
+            <ul class="navbar-links">
+                <li>
+                    <a href="/" class="links">Accueil</a>
+                </li>
+                <li>
+                    <a href="/parking/map" class="links">Parkings</a>
+                </li>
+                <li>
+                    <a href="/velo/map" class="links">V&eacute;lhops</a>
+                </li>
             </ul>
         </nav>
     </header>
+    {#<pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </pre>#}
         {% block body %}
 
         {% endblock %}
