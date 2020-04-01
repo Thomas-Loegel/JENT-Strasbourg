@@ -1,6 +1,13 @@
 @import "includes/simple-grid";
 @import "includes/reset-css";
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;900&display=swap');
+
+* {
+  font-family: 'Work Sans', sans-serif;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -9,6 +16,8 @@
   padding: 1em 1.5em;
 
   .navbar-title {
+    font-weight: 900;
+
     margin: 0.5em 1em;
 
     line-height: 1;
