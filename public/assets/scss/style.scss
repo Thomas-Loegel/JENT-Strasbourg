@@ -1,9 +1,21 @@
+// Imports scss files
 @import "includes/simple-grid";
 @import "includes/reset-css";
 
+// Imports fonts
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;900&display=swap');
 
+// Useful Var
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+$background-light: #eeeeee;
+$background-lighter: #fefefe;
+
+// CSS
 * {
   font-family: 'Work Sans', sans-serif;
 }
