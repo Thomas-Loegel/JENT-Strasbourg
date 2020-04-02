@@ -1,20 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Carte des Parkings{% endblock %}
+{% block title %}Carte des Parkings
+{% endblock %}
 
 {% block body %}
-    <main>
-        <div class="map-info-top">
-            <h2 class="map-title"></h2>
-            <div class="map-description">
-                <p></p>
-            </div>
-        </div>
-        <div class="map-display">
-
-        </div>
-        <div class="map-info-bottom">
-            <p></p>
-        </div>
-    </main>
+	<main>
+		<div class="map-info-top">
+			<h2 class="map-title">
+				Parkings disponibles région Strasbourg
+			</h2>
+			<div class="map-description">
+				<p>
+                    {{ startTime }}
+                </p>
+			</div>
+		</div>
+		<div class="map-display">
+			
+		</div>
+		<div class="map-info-bottom">
+			<p></p>
+		</div>
+	</main>
 {% endblock %}
