@@ -1,30 +1,63 @@
+//
+// style.scss
+// Compiled by sass with scss syntax
+//
+// This file is spited between different comment for readability
+//
+
+//
 // Imports scss files
+//
 @import "includes/variables";
 @import "includes/reset-css";
 @import "includes/container";
 @import "includes/simple-grid";
 
+//
 // Imports fonts
+//
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;900&display=swap');
 
+//
+// Base layout for the page layout and footer alignment
+//
 
-// CSS
+body {
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  footer {
+    flex-shrink: 0;
+  }
+}
+
+//
+// Main style information
+// Color, padding, marging, and so on...
+//
+
+// Diverse background color which don't fit elsewhere TODO Change color
+%headerFooter {
+  background: $background-header-footer;
+}
+
+body {
+  background: $background-light;
+}
+
+// Default font for all elements TODO Change font
 * {
   font-family: 'Work Sans', sans-serif;
 }
 
-//TODO Change color
-%headerFooter {
-  background: $background-header-footer;
-  left: 0;
-  right: 0;
-}
-
+// Header style
 header {
-  position: sticky;
   @extend %headerFooter;
-  top: 0;
 
   .navbar-container {
     display: flex;
@@ -58,21 +91,18 @@ header {
   }
 }
 
-body {
-  background: $background-light;
-}
-
+// Main style
 main {
   color: $text-color-body;
+
   .main-container {
 
   }
 }
 
+// Footer style
 footer {
-  position: fixed;
   @extend %headerFooter;
-  bottom: 0;
 
   padding: .5em 0;
 
@@ -85,7 +115,7 @@ footer {
   }
 }
 
-//TODO Change color
+// Links style TODO Change color
 .links {
   text-decoration: none;
   transition: .3s all ease;
