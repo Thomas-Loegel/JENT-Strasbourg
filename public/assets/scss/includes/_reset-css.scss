@@ -1,7 +1,15 @@
 // Custom Reset CSS
 
-html, body, ul {
+* {
+  box-sizing: border-box;
+}
+
+html, body, ul, p {
   margin: 0;
   padding: 0;
   font-size: 100%;
+}
+
+p {
+  margin-bottom: 1em;
 }
