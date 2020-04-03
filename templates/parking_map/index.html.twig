@@ -1,6 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Carte des Parkings
+{% block title %}
+	Carte des Parkings
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
 {% endblock %}
 
 {% block body %}
@@ -11,15 +15,38 @@
 			</h2>
 			<div class="map-description">
 				<p>
-                    {{ startTime }}
-                </p>
+                    <pre>{{ position }}</pre>
+				</p>
 			</div>
 		</div>
-		<div class="map-display">
+		<div class="map-display"id="map-parking" style="height: 400px; width: 900px;">
 			
 		</div>
 		<div class="map-info-bottom">
 			<p></p>
 		</div>
 	</main>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+	<script>
+	let mymap = L.map('map-parking').setView([48.576670, 7.745156], 13);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+
+
+    let marker = L.marker([ 48.5815606649,
+7.74828482148 ]).addTo(mymap);
+    
+	</script>
 {% endblock %}
