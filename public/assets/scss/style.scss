@@ -15,11 +15,17 @@
 }
 
 //TODO Change color
-.navbar {
-  background: #212121;
+%div-color {
+  background: $background-header-footer;
+}
+
+header {
+  @extend %div-color;
 
   position: sticky;
   top: 0;
+  left: 0;
+  right: 0;
 
   .navbar-container {
     display: flex;
@@ -53,6 +59,24 @@
       }
     }
   }
+}
+
+body {
+  background: $background-light;
+}
+
+footer {
+  @extend %div-color;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: .5em 0;
+
+  color: $text-color-gray;
+
 }
 
 //TODO Change color
