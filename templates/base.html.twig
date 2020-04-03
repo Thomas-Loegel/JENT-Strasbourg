@@ -11,7 +11,7 @@
         {% endblock %}
     </head>
     <body>
-    <header class="navbar" role="banner">
+    <header role="banner">
         <div class="container navbar-container">
             <h1 class="navbar-title"><a href="/" class="links">JENT</a></h1>
             <nav class="navbar-nav" role="navigation">
@@ -30,70 +30,24 @@
         </div>
 
     </header>
-    <pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </pre>
         {% block body %}
 
         {% endblock %}
-    <footer>
-        <p>Je suis le footer</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <footer role="doc-footnote">
+        <div class="container footer-container">
+            <div class="row footer-logos">
+                <div class="col-3 col-12-sm">
+                    <a href="https://www.onlineformapro.com/">
+                        <img src="https://www.accesscodeschool.fr/wp-content/uploads/2018/10/logo_footer.png"
+                             alt="Logo formation online">
+                    </a>
+                </div>
+            </div>
+            <p>
+                Je suis le footer.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+        </div>
     </footer>
         {% block javascripts %}
 
