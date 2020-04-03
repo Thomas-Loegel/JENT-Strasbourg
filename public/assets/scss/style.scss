@@ -1,55 +1,67 @@
 // Imports scss files
-@import "includes/simple-grid";
+@import "includes/variables";
 @import "includes/reset-css";
+@import "includes/container";
+@import "includes/simple-grid";
 
 // Imports fonts
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;900&display=swap');
 
-// Useful Var
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
-
-$background-light: #eeeeee;
-$background-lighter: #fefefe;
 
 // CSS
 * {
   font-family: 'Work Sans', sans-serif;
 }
 
+//TODO Change color
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background: #212121;
 
-  padding: 1em 1.5em;
+  position: sticky;
+  top: 0;
 
-  .navbar-title {
-    font-weight: 900;
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .25em 0;
 
-    margin: 0.5em 1em;
 
-    line-height: 1;
-  }
 
-  .navbar-nav {
-    flex-grow: 1;
-  }
+    .navbar-title {
+      font-size: 1.75em;
+      font-weight: 900;
+      margin: 0.5em 1em;
+      line-height: 1;
+    }
 
-  .navbar-links {
-    list-style: none;
-    display: block;
-    text-align: right;
+    .navbar-nav {
+      flex-grow: 1;
+      @media (max-width: $breakpoint-md) { display: none}
+    }
 
-    li {
-      display: inline-block;
+    .navbar-links {
+      font-size: 1.25em;
+      list-style: none;
+      display: block;
+      text-align: right;
+
+      li {
+        margin: 0 .25em;
+        display: inline-block;
+      }
     }
   }
 }
 
+//TODO Change color
 .links {
   text-decoration: none;
+  transition: .3s all ease;
+  color: #d3d3d3;
+
+  &:hover {
+   color: #ffffff;
+  }
 }

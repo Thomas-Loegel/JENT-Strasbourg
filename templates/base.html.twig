@@ -12,22 +12,25 @@
     </head>
     <body>
     <header class="navbar" role="banner">
-        <h1 class="navbar-title">JENT</h1>
-        <nav class="navbar-nav" role="navigation">
-            <ul class="navbar-links">
-                <li>
-                    <a href="/" class="links">Accueil</a>
-                </li>
-                <li>
-                    <a href="/parking/map" class="links">Parkings</a>
-                </li>
-                <li>
-                    <a href="/velo/map" class="links">V&eacute;lhops</a>
-                </li>
-            </ul>
-        </nav>
+        <div class="container navbar-container">
+            <h1 class="navbar-title"><a href="/" class="links">JENT</a></h1>
+            <nav class="navbar-nav" role="navigation">
+                <ul class="navbar-links">
+                    <li>
+                        <a href="/" class="links">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="/parking/map" class="links">Parkings</a>
+                    </li>
+                    <li>
+                        <a href="/velo/map" class="links">V&eacute;lhops</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
     </header>
-    {#<pre>
+    <pre>
 
 
 
@@ -84,7 +87,7 @@
 
 
 
-    </pre>#}
+    </pre>
         {% block body %}
 
         {% endblock %}
