@@ -15,17 +15,16 @@
 }
 
 //TODO Change color
-%div-color {
+%headerFooter {
   background: $background-header-footer;
+  left: 0;
+  right: 0;
 }
 
 header {
-  @extend %div-color;
-
   position: sticky;
+  @extend %headerFooter;
   top: 0;
-  left: 0;
-  right: 0;
 
   .navbar-container {
     display: flex;
@@ -73,12 +72,9 @@ main {
 }
 
 footer {
-  @extend %div-color;
-
   position: fixed;
+  @extend %headerFooter;
   bottom: 0;
-  left: 0;
-  right: 0;
 
   padding: .5em 0;
 
