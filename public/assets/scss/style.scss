@@ -65,6 +65,13 @@ body {
   background: $background-light;
 }
 
+main {
+  color: $text-color-body;
+  .main-container {
+
+  }
+}
+
 footer {
   @extend %div-color;
 
