@@ -127,8 +127,21 @@ footer {
   color: $text-color-gray;
 
   .footer-container {
-    .footer-logos {
-      text-align: center;
+    .footer-logos-container {
+      padding: .5em 0;
+
+      .footer-logos {
+        text-align: center;
+      }
+    }
+
+    .footer-text {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      padding: .5em 0 .75em;
+
+      p:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
 }
