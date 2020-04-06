@@ -26,6 +26,10 @@ $text-color-body: #000000;
 $text-color-body-p: #000000;
 $text-color-gray: #aaaaaa;
 
-// Simple grid
-$grid-width: 96%;
-$grid-gutter: 4%;
+// Used in .container width media queries
+$list-container-width: (
+  $breakpoint-sm: $container-width-sm,
+  $breakpoint-md: $container-width-md,
+  $breakpoint-lg: $container-width-lg,
+  $breakpoint-xl: $container-width-xl,
+);

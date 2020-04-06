@@ -8,8 +8,9 @@
   margin-right: auto;
   margin-left: auto;
 
-  @media (min-width: $breakpoint-sm) { max-width: $container-width-sm; }
-  @media (min-width: $breakpoint-md) { max-width: $container-width-md; }
-  @media (min-width: $breakpoint-lg) { max-width: $container-width-lg; }
-  @media (min-width: $breakpoint-xl) { max-width: $container-width-xl; }
+  @each $breakpoint, $container-width in $list-container-width {
+    @media (min-width: #{$breakpoint}) {
+      max-width: #{$container-width};
+    }
+  }
 }

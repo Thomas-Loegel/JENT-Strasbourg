@@ -18,10 +18,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;900&display=swap');
 
-//
-// Base layout for the page layout and footer alignment
-//
-
+// Base layout for the page layout
 body {
   display: flex;
   flex-direction: column;
@@ -52,10 +49,9 @@ body {
     grid-template-rows: 1fr;
     grid-template-columns: repeat(4, 1fr);
   }
-  // Gap between column elements
-  grid-column-gap: 25px;
-  // Gap between row elements
-  grid-row-gap: 10px;
+  // Gap between elements
+  grid-column-gap: 25px; //column
+  grid-row-gap: 10px; //row
 }
 
 //
@@ -90,8 +86,8 @@ header {
     .navbar-title {
       font-size: 1.75em;
       font-weight: 900;
-      margin: 0.5em 1em;
       line-height: 1;
+      margin: 0.5em 1em;
     }
 
     .navbar-nav {
@@ -105,7 +101,7 @@ header {
       display: block;
       text-align: right;
 
-      li {
+      .navbar-links {
         margin: 0 .25em;
         display: inline-block;
       }
@@ -144,6 +140,6 @@ footer {
   color: $links-color-light;
 
   &:hover {
-   color: $links-color-light-hover;
+    color: $links-color-light-hover;
   }
 }
