@@ -11,7 +11,6 @@
 @import "includes/variables";
 @import "includes/reset-css";
 @import "includes/container";
-@import "includes/simple-grid";
 
 //
 // Imports fonts
@@ -34,6 +33,31 @@ body {
   footer {
     flex-shrink: 0;
   }
+}
+
+// Grid .footer-logos-container
+.footer-logos-container {
+  display: grid;
+
+  // For small (xs and sm) devices: 1 per lines
+  @media only screen and (min-width: $breakpoint-xs) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+  // For medium (md) devices: 2 per lines
+  @media only screen and (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  // For large (lg) devices: 4 per lines
+  @media only screen and (min-width: $breakpoint-lg) {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  // Gap between column elements
+  grid-column-gap: 25px;
+  // Gap between row elements
+  grid-row-gap: 10px;
 }
 
 //
