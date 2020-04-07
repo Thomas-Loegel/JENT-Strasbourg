@@ -6,6 +6,10 @@
     <main role="main">
         <div class="container main-container">
             <h2>Accueil</h2>
+            {# Test Vue.js#}
+            {#<div id="test">
+                <App/>
+            </div>#}
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cum est hic laboriosam qui quo rem
                 repellat rerum similique ullam. Dicta error ex exercitationem id in minima nihil nostrum sit.
@@ -27,3 +31,13 @@
         </div>
     </main>
 {% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+
