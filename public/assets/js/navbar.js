@@ -16,8 +16,6 @@ burger.addEventListener("click", () => {
 });
 
 window.addEventListener("resize", () => {
-    console.log(window.innerWidth);
-    // If windows is lower than sm breakpoint remove mobile navbar style
     if (window.innerWidth >= 575) {
         navbar.classList.remove("mobile-navbar-show");
         navbar.classList.remove("mobile-navbar-hide");
