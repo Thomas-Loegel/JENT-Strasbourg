@@ -11,6 +11,7 @@
 @import "includes/variables";
 @import "includes/reset-css";
 @import "includes/container";
+
 @import "vendor/icomoon";
 
 //
@@ -57,10 +58,10 @@ body {
 
 //
 // Main style information
-// Color, padding, marging, and so on...
+// Colors, paddings, margins, and so on...
 //
 
-// Diverse background color which don't fit elsewhere TODO Change color
+// Diverse background color which don't fit elsewhere
 %headerFooter {
   background: $background-header-footer;
 }
@@ -69,7 +70,7 @@ body {
   background: $background-light;
 }
 
-// Default font for all elements TODO Change font
+// Default font for all elements TODO Change font?
 * {
   font-family: 'Work Sans', sans-serif;
 }
