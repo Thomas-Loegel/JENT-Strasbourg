@@ -15,9 +15,9 @@
         <div class="container navbar-container">
             <h1 class="navbar-title"><a href="/" class="links">JENT</a></h1>
             <div class="navbar-burger">
-                <span class="icon-menu"></span>
+                <span class="icon-menu" id="burger"></span>
             </div>
-            <nav class="navbar-nav" role="navigation">
+            <nav class="navbar-nav" id="navbar" role="navigation">
                 <ul class="navbar-menu">
                     <li class="navbar-links">
                         <a href="/" class="links">Accueil</a>
@@ -71,8 +71,9 @@
             </div>
         </div>
     </footer>
-        {% block javascripts %}
+    <script src="/assets/js/navbar.js"></script>
+    {% block javascripts %}
 
-        {% endblock %}
+    {% endblock %}
     </body>
 </html>
