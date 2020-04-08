@@ -13,13 +13,8 @@
 			<h2 class="map-title">
 				Parkings disponibles région Strasbourg
 			</h2>
-			<div
-				class="map-description">{#
-									{% for parking in infoParking %}
-										<p>
-					                    {{ parking.name }}
-										</p>
-									{% endfor %}#}
+			<div class="map-description">
+
 			</div>
 		</div>
 		<div class="map-display" id="map-parking" style="height: 400px; width: 900px;"></div>
@@ -56,10 +51,8 @@
 
             let marker = L.marker([parking.positionX, parking.positionY]).addTo(mymap);
             
-            marker.bindPopup("<b>" + parking.name + "</b><p>" + parking.address + "</p>").openPopup();
-            
+            marker.bindPopup("<b>" + parking.name + "</b><p>" + parking.address + "</p><a href='/parking/detail/" + parking.idsurfs + "'>En savoir plus</a>").openPopup();
             })
         })
-
 	</script>
 {% endblock %}
