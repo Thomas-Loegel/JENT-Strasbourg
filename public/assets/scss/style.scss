@@ -92,9 +92,24 @@ header {
       margin: 0.5em 1em;
     }
 
+    .navbar-burger {
+      cursor: pointer;
+      margin: 0.5em 1em;
+      font-size: 1.75em; //TODO Change size?
+
+      z-index: 100;
+      @media only screen and (min-width: $breakpoint-sm) {
+        display: none;
+      }
+    }
+
     .navbar-nav {
       flex-grow: 1;
-      @media (max-width: $breakpoint-md) { display: none}
+      display: none;
+
+      @media only screen and (min-width: $breakpoint-sm) {
+        display: block;
+      }
     }
 
     .navbar-menu {
@@ -148,8 +163,8 @@ footer {
   }
 }
 
-// Links style TODO Change color
-.links {
+// Links style and burger icon
+.links, .navbar-burger {
   text-decoration: none;
   transition: .3s all ease;
   color: $links-color-light;
