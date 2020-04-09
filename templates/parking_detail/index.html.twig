@@ -23,16 +23,21 @@
             {% endif %}
         </p>
 
-        <p>Capacité : <strong>{{ total }}</strong> places</p>
-
         <p>Libre :
             {% if libre == 0 %}
+                {# full #}
                 <strong style="color:red">Complet !</strong>
 
+                {% elseif libre < 10 %}
+                    {# almost full #}
+                    <strong style="color:orange">{{ libre }}</strong> places.
+
                 {% else %}
-                    <strong style="color:green">{{ libre }}</strong> places
+                    <strong style="color:green">{{ libre }}</strong> places.
             {% endif %}
         </p>
+        
+        <p>Capacité : <strong>{{ total }}</strong> places</p>
     </div>
 {% endblock %}
 
