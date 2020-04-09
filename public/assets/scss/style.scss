@@ -160,6 +160,7 @@ header {
     .navbar-nav {
       flex-grow: 1;
       display: none;
+      z-index: 10;
 
       @media only screen and (min-width: $breakpoint-sm) {
         display: block;
@@ -189,15 +190,19 @@ main {
     h2 {
       padding-bottom: .5em;
     }
+
+    .map-display div[id^="map-"] {
+      height: 500px;
+      z-index: 5;
+      margin-bottom: 1em;
+    }
   }
 }
 
 // Footer style
 footer {
   @extend %headerFooter;
-
   padding: .5em 0;
-
   color: $text-color-gray;
 
   .footer-container {
