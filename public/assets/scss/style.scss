@@ -110,7 +110,6 @@ body {
   }
 }
 
-
 //
 // Main style information
 // Colors, paddings, margins, and so on...
@@ -183,10 +182,13 @@ header {
 
 // Main style
 main {
+  padding: 1.5em 0;
   color: $text-color-body;
 
   .main-container {
-
+    h2 {
+      padding-bottom: .5em;
+    }
   }
 }
 
