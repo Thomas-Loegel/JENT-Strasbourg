@@ -1,0 +1,21 @@
+//
+// Default style for a lot of elements
+//
+
+body {
+  background: $background-light;
+}
+
+* {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.links, .navbar-burger {
+  text-decoration: none;
+  transition: .3s all ease;
+  color: $links-color-light;
+
+  &:hover {
+    color: $links-color-light-hover;
+  }
+}

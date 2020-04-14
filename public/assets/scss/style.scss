@@ -1,187 +1,34 @@
 //
 // style.scss
-// Compiled by sass with scss syntax
+// SASS with SCSS syntax
 //
-// This file is spited between different comment for readability
+// This file is spited between different comment
 //
 
-//
-// Imports scss files
-//
-@import "includes/variables";
-@import "includes/reset-css";
-@import "includes/container";
+@import "include/variables";
+@import "include/reset-css";
+@import "include/container";
+@import "include/navbar";
 
 @import "vendor/icomoon";
+@import "include/fonts";
 
-//
-// Imports fonts
-//
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;900&display=swap');
+// Base layout for sticky footer
+// Not be confused with postion: fixed/sticky;
+// Read more at https://css-tricks.com/couple-takes-sticky-footer/
+@import "include/stickyFooter";
 
-// Base layout for the page layout
-body {
-  display: flex;
-  flex-direction: column;
+// CSS Grid 1 for logos in footer
+@import "include/gridFooterLogos";
 
-  main {
-    flex: 1 0 auto;
-  }
-
-  footer {
-    flex-shrink: 0;
-  }
-}
-
-// Grid .footer-logos-container
-.footer-logos-container {
-  display: grid;
-
-  // For small (xs) devices: 1 per lines
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
-  // For small (sm) devices: 2 per lines
-  @media only screen and (min-width: $breakpoint-sm) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
-  // For large (lg) devices: 4 per lines
-  @media only screen and (min-width: $breakpoint-lg) {
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(4, 1fr);
-  }
-  // Gap between elements
-  grid-column-gap: 25px; //column
-  grid-row-gap: 10px; //row
-}
-
-// Mobile navbar
-
-%mobileHeader {
-  display: block !important;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  left: 0;
-
-  background: rgba(0, 0, 0, 0.97) !important;
-
-  .navbar-menu {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-
-    .navbar-links {
-      text-align: center;
-      font-size: 3em;
-    }
-  }
-}
-
-.mobile-navbar-show {
-  @extend %mobileHeader;
-  top: -100%;
-
-  animation: slide-bottom 0.5s forwards;
-
-  @keyframes slide-bottom {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(100%);
-    }
-  }
-}
-
-.mobile-navbar-hide {
-  @extend %mobileHeader;
-
-  top: 0;
-  animation: slide-top 0.5s forwards;
-  @keyframes slide-top {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-100%);
-    }
-  }
-}
-
-//
 // Main style information
-// Colors, paddings, margins, and so on...
-//
+@import "include/defaultStyle";
 
-// Diverse background color which don't fit elsewhere
-%headerFooter {
+
+header {
   background: $background-header-footer;
 }
 
-body {
-  background: $background-light;
-}
-
-// Default font for all elements TODO Change font?
-* {
-  font-family: 'Work Sans', sans-serif;
-}
-
-// Header style
-header {
-  @extend %headerFooter;
-
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: .25em 0;
-
-    .navbar-title {
-      font-size: 1.75em;
-      font-weight: 900;
-      line-height: 1;
-      margin: 0.5em 1em;
-    }
-
-    .navbar-burger {
-      cursor: pointer;
-      margin: 0.5em 1em;
-      font-size: 1.75em; //TODO Change size?
-
-      z-index: 100;
-      @media only screen and (min-width: $breakpoint-sm) {
-        display: none;
-      }
-    }
-
-    .navbar-nav {
-      flex-grow: 1;
-      display: none;
-      z-index: 10;
-
-      @media only screen and (min-width: $breakpoint-sm) {
-        display: block;
-      }
-    }
-
-    .navbar-menu {
-      font-size: 1.25em;
-      list-style: none;
-      display: block;
-      text-align: right;
-
-      .navbar-links {
-        margin: 0 .25em;
-        display: inline-block;
-      }
-    }
-  }
-}
-
-// Main style
 main {
   padding: 1.5em 0;
   color: $text-color-body;
@@ -199,9 +46,8 @@ main {
   }
 }
 
-// Footer style
 footer {
-  @extend %headerFooter;
+  background: $background-header-footer;
   padding: .5em 0;
   color: $text-color-gray;
 
@@ -222,16 +68,5 @@ footer {
         margin-bottom: 0;
       }
     }
-  }
-}
-
-// Links style and burger icon
-.links, .navbar-burger {
-  text-decoration: none;
-  transition: .3s all ease;
-  color: $links-color-light;
-
-  &:hover {
-    color: $links-color-light-hover;
   }
 }

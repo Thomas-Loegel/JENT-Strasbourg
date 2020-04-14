@@ -1,5 +1,5 @@
 //
-// Variable for scss
+// Variables for scss
 //
 
 // Media queries
@@ -25,6 +25,9 @@ $links-color-light-hover: #ffffff;
 $text-color-body: #000000;
 $text-color-body-p: #000000;
 $text-color-gray: #aaaaaa;
+
+// Padding for p elements
+$padding-paragraph: 1em;
 
 // Used in .container width media queries
 $list-container-width: (
