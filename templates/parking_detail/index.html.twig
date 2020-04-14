@@ -5,43 +5,61 @@
 {% endblock %}
 
 {% block body %}
-    <main>
-        <div class="container main-container">
-            <h2>{{ name }}</h2>
+    <h2>{{ name }}</h2>
 
-            <div>
-                <p>État :
-                    {% if etat == 1 %}
-                        {# open #}
-                        <strong style="color:green">{{ etat_descriptif }}</strong>
+    <div class="container main-container">
+        <p>
+            État :
+            {% if etat == 1 %}
+                {# open #}
+                <strong style="color:green">{{ etat_descriptif }}</strong>
 
-                    {% elseif etat == 2 %}
-                        {# close #}
-                        <strong style="color:red">{{ etat_descriptif }}</strong>
+                {% elseif etat == 2 %}
+                    {# close #}
+                    <strong style="color:red">{{ etat_descriptif }}</strong>
 
-                    {% elseif etat == 0 %}
-                        {# unavailable #}
-                        <strong style="color:orange">{{ etat_descriptif }}</strong>
-                    {% endif %}
-                </p>
+                {% elseif etat == 0 %}
+                    {# unavailable #}
+                    <strong style="color:orange">{{ etat_descriptif }}</strong>   
+            {% endif %}
+        </p>
 
-                <p>Libre :
-                    {% if libre == 0 %}
-                        {# full #}
-                        <strong style="color:red">Complet !</strong>
+        <p>
+            Libre :
+            {% if libre == 0 %}
+                {# full #}
+                <strong style="color:red">Complet !</strong>
 
-                    {% elseif libre < 10 %}
-                        {# almost full #}
-                        <strong style="color:orange">{{ libre }}</strong> places.
+                {% elseif libre < 10 %}
+                    {# almost full #}
+                    <strong style="color:orange">{{ libre }}</strong> places.
 
-                    {% else %}
-                        <strong style="color:green">{{ libre }}</strong> places.
-                    {% endif %}
-                </p>
+                {% else %}
+                    <strong style="color:green">{{ libre }}</strong> places.
+            {% endif %}
+        </p>
+        
+        <p>
+            Capacité : <strong>{{ total }}</strong> places
+        </p>
 
-                <p>Capacité : <strong>{{ total }}</strong> places</p>
-            </div>
-        </div>
-    </main>
+        <p>
+            Accès handicapés :
+            {% if accessforwheelchair == 0 %}
+                <strong style="color:red">Non</strong>
+
+                {% else %}
+                    <strong style="color:green">Oui</strong>
+            {% endif %}
+        </p>
+    </div>
+
+    <hr>
+
+    <div>
+        <h3>Détails :</h3>
+
+        <p>Address : {{ address }}</p>
+        <a target="_blank" href="{{ more }}">En savoir plus</a>
+    </div>
 {% endblock %}
-
