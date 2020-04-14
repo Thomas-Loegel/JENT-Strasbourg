@@ -5,14 +5,15 @@
 {% endblock %}
 
 {% block body %}
-    <h2>{{ name }}</h2>
+    <main>
+        <div class="container main-container">
 
-    <div class="container main-container">
-        <p>
-            État :
-            {% if etat == 1 %}
-                {# open #}
-                <strong style="color:green">{{ etat_descriptif }}</strong>
+            <h2>{{ name }}</h2>
+            <p>
+                État :
+                {% if etat == 1 %}
+                    {# open #}
+                    <strong style="color:green">{{ etat_descriptif }}</strong>
 
                 {% elseif etat == 2 %}
                     {# close #}
@@ -20,15 +21,15 @@
 
                 {% elseif etat == 0 %}
                     {# unavailable #}
-                    <strong style="color:orange">{{ etat_descriptif }}</strong>   
-            {% endif %}
-        </p>
+                    <strong style="color:orange">{{ etat_descriptif }}</strong>
+                {% endif %}
+            </p>
 
-        <p>
-            Libre :
-            {% if libre == 0 %}
-                {# full #}
-                <strong style="color:red">Complet !</strong>
+            <p>
+                Libre :
+                {% if libre == 0 %}
+                    {# full #}
+                    <strong style="color:red">Complet !</strong>
 
                 {% elseif libre < 10 %}
                     {# almost full #}
@@ -36,30 +37,29 @@
 
                 {% else %}
                     <strong style="color:green">{{ libre }}</strong> places.
-            {% endif %}
-        </p>
-        
-        <p>
-            Capacité : <strong>{{ total }}</strong> places
-        </p>
+                {% endif %}
+            </p>
 
-        <p>
-            Accès handicapés :
-            {% if accessforwheelchair == 0 %}
-                <strong style="color:red">Non</strong>
+            <p>
+                Capacité : <strong>{{ total }}</strong> places
+            </p>
+
+            <p>
+                Accès handicapés :
+                {% if accessforwheelchair == 0 %}
+                    <strong style="color:red">Non</strong>
 
                 {% else %}
                     <strong style="color:green">Oui</strong>
-            {% endif %}
-        </p>
-    </div>
+                {% endif %}
+            </p>
+            <hr>
+            <div>
+                <h3>Détails :</h3>
 
-    <hr>
-
-    <div>
-        <h3>Détails :</h3>
-
-        <p>Address : {{ address }}</p>
-        <a target="_blank" href="{{ more }}">En savoir plus</a>
-    </div>
+                <p>Address : {{ address }}</p>
+                <a target="_blank" href="{{ more }}">En savoir plus</a>
+            </div>
+        </div>
+    </main>
 {% endblock %}
