@@ -5,39 +5,43 @@
 {% endblock %}
 
 {% block body %}
-    <h1>{{ name }}</h1>
+    <main>
+        <div class="container main-container">
+            <h2>{{ name }}</h2>
 
-    <div>
-        <p>État :
-            {% if etat == 1 %}
-                {# open #}
-                <strong style="color:green">{{ etat_descriptif }}</strong>
+            <div>
+                <p>État :
+                    {% if etat == 1 %}
+                        {# open #}
+                        <strong style="color:green">{{ etat_descriptif }}</strong>
 
-                {% elseif etat == 2 %}
-                    {# close #}
-                    <strong style="color:red">{{ etat_descriptif }}</strong>
+                    {% elseif etat == 2 %}
+                        {# close #}
+                        <strong style="color:red">{{ etat_descriptif }}</strong>
 
-                {% elseif etat == 0 %}
-                    {# unavailable #}
-                    <strong style="color:orange">{{ etat_descriptif }}</strong>   
-            {% endif %}
-        </p>
+                    {% elseif etat == 0 %}
+                        {# unavailable #}
+                        <strong style="color:orange">{{ etat_descriptif }}</strong>
+                    {% endif %}
+                </p>
 
-        <p>Libre :
-            {% if libre == 0 %}
-                {# full #}
-                <strong style="color:red">Complet !</strong>
+                <p>Libre :
+                    {% if libre == 0 %}
+                        {# full #}
+                        <strong style="color:red">Complet !</strong>
 
-                {% elseif libre < 10 %}
-                    {# almost full #}
-                    <strong style="color:orange">{{ libre }}</strong> places.
+                    {% elseif libre < 10 %}
+                        {# almost full #}
+                        <strong style="color:orange">{{ libre }}</strong> places.
 
-                {% else %}
-                    <strong style="color:green">{{ libre }}</strong> places.
-            {% endif %}
-        </p>
-        
-        <p>Capacité : <strong>{{ total }}</strong> places</p>
-    </div>
+                    {% else %}
+                        <strong style="color:green">{{ libre }}</strong> places.
+                    {% endif %}
+                </p>
+
+                <p>Capacité : <strong>{{ total }}</strong> places</p>
+            </div>
+        </div>
+    </main>
 {% endblock %}
 

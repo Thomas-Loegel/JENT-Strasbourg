@@ -10,21 +10,25 @@
 
 {% block body %}
 	<main>
-		<div class="map-info-top">
-			<h2 class="map-title">
-				Parkings disponibles région Strasbourg
-			</h2>
+        <div class="container main-container">
+            <div class="map-info-top">
+                <h2 class="map-title">
+                    Parkings disponibles région Strasbourg
+                </h2>
 
-			<div class="map-description">
+                <div class="map-description">
 
-			</div>
-		</div>
+                </div>
+            </div>
 
-		<div class="map-display" id="map-parking" style="height: 400px; width: 900px;"></div>
-        
-		<div class="map-info-bottom">
-			<p></p>
-		</div>
+            <div class="map-display">
+                <div id="map-parking"></div>
+            </div>
+
+            <div class="map-info-bottom">
+                <p></p>
+            </div>
+        </div>
 	</main>
 {% endblock %}
 
