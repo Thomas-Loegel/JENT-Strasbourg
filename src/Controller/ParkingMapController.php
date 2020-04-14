@@ -41,6 +41,7 @@ class ParkingMapController extends AbstractController
         $contentArray = $response->toArray();
         $records = $contentArray["records"];
 
+
         for ($i = 0; $i < $nhits; $i++) {
             $parkings = $records[$i];
             $fields = $parkings['fields'];

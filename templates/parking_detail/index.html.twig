@@ -5,10 +5,11 @@
 {% endblock %}
 
 {% block body %}
-    <h1>{{ name }}</h1>
+    <h2>{{ name }}</h2>
 
     <div>
-        <p>État :
+        <p>
+            État :
             {% if etat == 1 %}
                 {# open #}
                 <strong style="color:green">{{ etat_descriptif }}</strong>
@@ -23,7 +24,8 @@
             {% endif %}
         </p>
 
-        <p>Libre :
+        <p>
+            Libre :
             {% if libre == 0 %}
                 {# full #}
                 <strong style="color:red">Complet !</strong>
@@ -37,7 +39,27 @@
             {% endif %}
         </p>
         
-        <p>Capacité : <strong>{{ total }}</strong> places</p>
+        <p>
+            Capacité : <strong>{{ total }}</strong> places
+        </p>
+
+        <p>
+            Accès handicapés :
+            {% if accessforwheelchair == 0 %}
+                <strong style="color:red">Non</strong>
+
+                {% else %}
+                    <strong style="color:green">Oui</strong>
+            {% endif %}
+        </p>
+    </div>
+
+    <hr>
+
+    <div>
+        <h3>Détails :</h3>
+
+        <p>Address : {{ address }}</p>
+        <a target="_blank" href="{{ more }}">En savoir plus</a>
     </div>
 {% endblock %}
-
