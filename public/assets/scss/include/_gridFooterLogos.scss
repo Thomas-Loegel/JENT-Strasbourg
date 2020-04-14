@@ -1,0 +1,28 @@
+//
+//
+//
+
+
+.footer-logos-container {
+  display: grid;
+
+  // For small (xs) devices: 1 per lines
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+
+  // For small (sm) devices: 2 per lines
+  @media only screen and (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  // For large (lg) devices: 4 per lines
+  @media only screen and (min-width: $breakpoint-lg) {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  // Gap between elements
+  grid-column-gap: 25px; //column
+  grid-row-gap: 10px; //row
+}
