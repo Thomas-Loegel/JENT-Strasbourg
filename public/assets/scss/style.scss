@@ -1,0 +1,72 @@
+//
+// style.scss
+// SASS with SCSS syntax
+//
+// This file is spited between different comment
+//
+
+@import "include/variables";
+@import "include/reset-css";
+@import "include/container";
+@import "include/navbar";
+
+@import "vendor/icomoon";
+@import "include/fonts";
+
+// Base layout for sticky footer
+// Not be confused with postion: fixed/sticky;
+// Read more at https://css-tricks.com/couple-takes-sticky-footer/
+@import "include/stickyFooter";
+
+// CSS Grid 1 for logos in footer
+@import "include/gridFooterLogos";
+
+// Main style information
+@import "include/defaultStyle";
+
+
+header {
+  background: $background-header-footer;
+}
+
+main {
+  padding: 1.5em 0;
+  color: $text-color-body;
+
+  .main-container {
+    h2 {
+      padding-bottom: .5em;
+    }
+
+    .map-display div[id^="map-"] {
+      height: 500px;
+      z-index: 5;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+footer {
+  background: $background-header-footer;
+  padding: .5em 0;
+  color: $text-color-gray;
+
+  .footer-container {
+    .footer-logos-container {
+      padding: .5em 0;
+
+      .footer-logos {
+        text-align: center;
+      }
+    }
+
+    .footer-text {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      padding: .5em 0 .75em;
+
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

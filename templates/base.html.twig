@@ -11,25 +11,69 @@
         {% endblock %}
     </head>
     <body>
-    <header>
-        <h1></h1>
-        <nav>
-            <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/parking/map">Parkings</a></li>
-                <li><a href="/velo/map">V&eacute;lhops</a></li>
-            </ul>
-        </nav>
+    <header role="banner">
+        <div class="container navbar-container">
+            <h1 class="navbar-title"><a href="/" class="links">JENT</a></h1>
+            <div class="navbar-burger">
+                <span class="icon-menu" id="burger"></span>
+            </div>
+            <nav class="navbar-nav" id="navbar" role="navigation">
+                <ul class="navbar-menu">
+                    <li class="navbar-links">
+                        <a href="/" class="links">Accueil</a>
+                    </li>
+                    <li class="navbar-links">
+                        <a href="/parking/map" class="links">Parkings</a>
+                    </li>
+                    <li class="navbar-links">
+                        <a href="/velo/map" class="links">V&eacute;lhops</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
-        {% block body %}
+    {% block body %}
 
-        {% endblock %}
-    <footer>
-        <p>Je suis le footer</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    {% endblock %}
+    <footer role="doc-footnote">
+        <div class="container footer-container">
+            <div class="footer-logos-container">
+                <div class="footer-logos">
+                    <a href="https://www.onlineformapro.com/">
+                        <img src="https://www.accesscodeschool.fr/wp-content/uploads/2018/10/logo_footer.png"
+                             alt="Logo formation online">
+                    </a>
+                </div>
+                <div class="footer-logos">
+                    <a href="https://www.onlineformapro.com/">
+                        <img src="https://www.accesscodeschool.fr/wp-content/uploads/2018/10/logo_footer.png"
+                             alt="Logo formation online">
+                    </a>
+                </div>
+                <div class="footer-logos">
+                    <a href="https://www.onlineformapro.com/">
+                        <img src="https://www.accesscodeschool.fr/wp-content/uploads/2018/10/logo_footer.png"
+                             alt="Logo formation online">
+                    </a>
+                </div>
+                <div class="footer-logos">
+                    <a href="https://www.onlineformapro.com/">
+                        <img src="https://www.accesscodeschool.fr/wp-content/uploads/2018/10/logo_footer.png"
+                             alt="Logo formation online">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-text">
+                <p>
+                    Je suis le footer.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </p>
+            </div>
+        </div>
     </footer>
-        {% block javascripts %}
-    
-        {% endblock %}
+    <script src="/assets/js/navbar.js"></script>
+    {% block javascripts %}
+
+    {% endblock %}
     </body>
 </html>
