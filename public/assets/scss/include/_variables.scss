@@ -14,6 +14,14 @@ $container-width-md: 720px;
 $container-width-lg: 960px;
 $container-width-xl: 1140px;
 
+// Used in .container width media queries
+$list-container-width: (
+        $breakpoint-sm: $container-width-sm,
+        $breakpoint-md: $container-width-md,
+        $breakpoint-lg: $container-width-lg,
+        $breakpoint-xl: $container-width-xl,
+);
+
 // Color TODO Change color?
 $background-header-footer: #333333;
 $background-light: #eeeeee;
@@ -29,10 +37,3 @@ $text-color-gray: #aaaaaa;
 // Padding for p elements
 $padding-paragraph: 1em;
 
-// Used in .container width media queries
-$list-container-width: (
-  $breakpoint-sm: $container-width-sm,
-  $breakpoint-md: $container-width-md,
-  $breakpoint-lg: $container-width-lg,
-  $breakpoint-xl: $container-width-xl,
-);
