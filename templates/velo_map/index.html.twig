@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="map-display">
-            <div id="map-velo"></div>
+            <div id="map-velos"></div>
         </div>
 
         <div class="map-info-bottom">
@@ -49,43 +49,42 @@
 {% endblock %}
 
 {% block javascripts %}
-	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-   crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
 
-	<script>
+    <script>
 
-  async function getVelos() {
-    const velosData = await fetch("/velo/velosdata");
-    //console.log(velosData);
+        async function getVelos() {
 
-    const mapData = await velosData.json();
-    //console.log(mapData);
+            const
+                velosData = await fetch("/velo/velosdata"),
+                mapData = await velosData.json(),
 
-    const mymap = L.map('map-velo').setView([48.576670, 7.745156], 12);
+                mymap = L.map('map-velos').setView([48.576670, 7.745156], 11),
 
-    const attribution = 'Map data &copy; <a href="https://https://www.thunderforest.com/">Thunderforest</a> contributors, ' + '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a href="https://www.thunderforest.com/">Thunderforest</a>';
+                attributionStreeMap = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' + '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
 
-    //const tileUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibW9udGVuIiwiYSI6ImNrOHU3cG01NTAxemwzaG80YjZ3cXk1bnMifQ.6XssoMajyBSefC88cuM9aA';
+                tileUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibW9udGVuIiwiYSI6ImNrOHU3cG01NTAxemwzaG80YjZ3cXk1bnMifQ.6XssoMajyBSefC88cuM9aA',
 
-    //const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    //const tileUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
-    const tileUrl = 'https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=b82c7c65d0734b6689824d32e216bc74';
+                tiles = L.tileLayer(tileUrl, {
+                    maxZoom: 18,
+                    attribution: attributionStreeMap,
+                    id: 'mapbox/streets-v11',
+                    tileSize: 512,
+                    zoomOffset: -1
+                });
 
-    const tiles = L.tileLayer(tileUrl, { attribution, maxZoom: 18, tileSize: 512, zoomOffset: -1 });
+            tiles.addTo(mymap);
 
-    tiles.addTo(mymap);
+            Object.keys(mapData).forEach((key) => {
+                let marker = L.marker([mapData[key].coordonnees[0], mapData[key].coordonnees[1]]).addTo(mymap);
 
-    Object.keys(mapData).forEach((key) => {
-      //console.log(mapData[key]); 
-      //console.log(key, mapData[key].coordonnees[0]);
-      let marker = L.marker([mapData[key].coordonnees[0], mapData[key].coordonnees[1]]).addTo(mymap);
-        
-      marker.bindPopup("<b>" + mapData[key].na + "</b><p>Velos disponibles: " + mapData[key].av + "</p><p>Velos totales: " + mapData[key].to + "</p>").openPopup();
-      })
-  }
+                marker.bindPopup("<b>" + mapData[key].na + "</b><p>Velos disponibles: " + mapData[key].av + "</p><p>Velos totales: " + mapData[key].to + "</p>").openPopup();
+            });
+        }
 
-  getVelos();
+        getVelos();
 
-  </script>
+    </script>
 {% endblock %}
