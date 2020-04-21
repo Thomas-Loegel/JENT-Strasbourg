@@ -20,5 +20,4 @@ window.addEventListener("resize", () => {
         navbar.classList.remove("mobile-navbar-show");
         navbar.classList.remove("mobile-navbar-hide");
     }
-
 });
