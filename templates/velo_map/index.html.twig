@@ -29,17 +29,21 @@
 {% block body %}
 
 <main>
-  <div class="map-info-top">
-      <h2 class="map-title"></h2>
-      <div class="map-description">
-          <p></p>
-      </div>
-  </div>
-  <div id="map-display" style="margin: 0 auto; width: 900px; height: 600px;"></div>
+    <div class="container main-container">
+        <div class="map-info-top">
+            <h2 class="map-title"></h2>
+            <div class="map-description">
+                <p></p>
+            </div>
+        </div>
+        <div class="map-display">
+            <div id="map-velo"></div>
+        </div>
 
-  <div class="map-info-bottom">
-      <p></p>
-  </div>
+        <div class="map-info-bottom">
+            <p></p>
+        </div>
+    </div>
 </main>
 
 {% endblock %}
@@ -58,7 +62,7 @@
     const mapData = await velosData.json();
     //console.log(mapData);
 
-    const mymap = L.map('map-display').setView([48.576670, 7.745156], 12);
+    const mymap = L.map('map-velo').setView([48.576670, 7.745156], 12);
 
     const attribution = 'Map data &copy; <a href="https://https://www.thunderforest.com/">Thunderforest</a> contributors, ' + '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a href="https://www.thunderforest.com/">Thunderforest</a>';
 
