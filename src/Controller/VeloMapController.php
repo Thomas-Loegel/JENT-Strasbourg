@@ -46,4 +46,3 @@ class VeloMapController extends AbstractController
         return $velosData;
     }
 }
-}
