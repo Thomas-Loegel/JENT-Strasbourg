@@ -12,6 +12,9 @@
   @each $breakpoint, $container-width in $list-container-width {
     @media (min-width: #{$breakpoint}) {
       max-width: #{$container-width};
+      @if($breakpoint <= $breakpoint-md) {
+        padding: 0;
+      }
     }
   }
 }

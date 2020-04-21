@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A propos{% endblock %}
+
+{% block body %}
+    <main role="main">
+        <div class="container main-container">
+            <h2>A propos</h2>
+            <p>
+                Nous avons développé cette application pour vous faciliter la vie dans Strasbourg ! <br>
+                Parking, vélhop !? Toutes les informations dont "VOUS" avez besoin ! <br>
+                Le tout en temps réel !
+            </p>
+            <p>
+                <strong>PARKING :</strong> <br>
+                <br>
+                Tout les parkings de l'Eurométrople sont répertoriés et vous donnent :<br>
+                <ul>
+                    <li>Nombres de places disponibles</li>
+                    <li>Adresse</li>
+                    <li>Accessibilité</li>
+                </ul>
+            </p>
+
+            <p>
+                <strong>VÉLHOP :</strong> <br>
+                <br>
+                Toutes les stations de vélos en libre service sont répertoriés et vous donnent :<br>
+                <ul>
+                    <li>Localisation</li>
+                    <li>Disponibilité</li>
+                </ul>
+            </p>
+
+            <p>
+                Toutes les fonctionalités de cette application sont possible grace à l'<a href="https://data.strasbourg.eu/pages/accueil/">Open Data</a> de Strasbourg et notre équipe de développeurs !
+            </p>
+        </div>
+    </main>
+{% endblock %}

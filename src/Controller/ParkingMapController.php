@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class ParkingMapController extends AbstractController
 {
     /**
-     * @Route("/parking/map", name="parking_map")
+     * @Route("/", name="parking_map")
      */
     public function index()
     {
