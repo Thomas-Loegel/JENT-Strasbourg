@@ -6,8 +6,8 @@
   display: grid;
 
   // For small (xs) devices: 1 per lines
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
 
   img {
     width: 75%;
@@ -17,14 +17,6 @@
       width: auto;
     }
   }
-
-
-  // For large (lg) devices: 4 per lines
-  @media only screen and (min-width: $breakpoint-lg) {
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   // Gap between elements
   grid-column-gap: 25px;
   grid-row-gap: 10px;
