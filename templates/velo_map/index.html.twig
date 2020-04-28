@@ -2,24 +2,6 @@
 
 {% block title %}Carte des V&eacute;lhops{% endblock %}
 
-{# {% block body %}
-    <main>
-        <div class="map-info-top">
-            <h2 class="map-title"></h2>
-            <div class="map-description">
-                <p></p>
-            </div>
-        </div>
-        <div class="map-display">
-
-        </div>
-        <div class="map-info-bottom">
-            <p></p>
-        </div>
-    </main>
-{% endblock %} #}
-
-
 {% block stylesheets %}
    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -29,17 +11,23 @@
 {% block body %}
 
 <main>
-  <div class="map-info-top">
-      <h2 class="map-title"></h2>
-      <div class="map-description">
-          <p></p>
-      </div>
-  </div>
-  <div id="map-display" style="margin: 0 auto; width: 900px; height: 600px;"></div>
+    <div class="container main-container">
+        <div class="map-info-top">
+            <h2 class="map-title">
+              Vélhop, les vélos disponibles région Strasbourg
+            </h2>
+            <div class="map-description">
+                
+            </div>
+        </div>
+        <div class="map-display">
+            <div id="map-velos"></div>
+        </div>
 
-  <div class="map-info-bottom">
-      <p></p>
-  </div>
+        <div class="map-info-bottom">
+            <p></p>
+        </div>
+    </div>
 </main>
 
 {% endblock %}
